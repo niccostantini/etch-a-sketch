@@ -1,5 +1,6 @@
 const container = document.querySelector(".container");
 const squareSide = 31.04;
+let squares;
 
 function createGrid (n) {
     for(i = 0; i < (n*n); i++){
@@ -7,9 +8,12 @@ function createGrid (n) {
         square.setAttribute("class", "square");
         container.appendChild(square);
     }
-
-
     let containerWidth = (squareSide * n * 1.02)+"px";
-
     container.style.width = containerWidth;
+    squares = document.querySelectorAll(".square");
+    squares.forEach(square => square.addEventListener("mouseover", () => {square.style.backgroundColor = "black"}))
+}
+
+function reset() {
+
 }
