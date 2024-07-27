@@ -9,7 +9,7 @@ resetButton.disabled = true;
 
 function createGrid (n) {
 
-    if (n > 100) {container.textContent = "ERROR"}
+    if (n > 100) {container.textContent = "ERROR"; resetButton.disabled = true;}
     else if (n <= 100) {
         if (container.textContent == "ERROR") {container.textContent = ""}
         for(i = 0; i < (n*n); i++){
@@ -17,10 +17,10 @@ function createGrid (n) {
             square.setAttribute("class", "square");
             container.appendChild(square);
         }
-        let containerWidth = (squareSide * n * 1.02)+"px";
+        let containerWidth = (squareSide * n + 1)+"px";
         container.style.width = containerWidth;
         squares = document.querySelectorAll(".square");
-        squares.forEach(square => square.addEventListener("mouseover", () => {square.style.backgroundColor = "black"}))
+        squares.forEach(square => square.addEventListener("mouseover", () => {square.style.backgroundColor = "black"; square.style.borderColor = "black"}))
         createButton.disabled = true;
         resetButton.disabled = false;
         }
@@ -28,7 +28,8 @@ function createGrid (n) {
 
 function reset() {
     squares = document.querySelectorAll(".square");
-    squares.forEach(function(square) {square.style.backgroundColor = ""; square.remove();});
+    squares.forEach(function(square) {square.style.backgroundColor = ""; square.style.borderColor = ""; square.remove();});
+    container.style.width = 0;
     resetButton.disabled = true;
 }
 
