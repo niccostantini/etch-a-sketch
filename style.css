@@ -5,8 +5,7 @@ body {
     justify-content: center;
     align-items: center;
     margin: 2% 5%;
-
-    /* background-image: url(./tile.png); */
+    background-image: url(./tile.png);
 }
 
 h1 {
@@ -58,6 +57,7 @@ button {
     width: 621.66px;
     padding-top: 20px;
     padding-bottom: 20px;
+    background-color: white;
 
 
 }
