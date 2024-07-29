@@ -4,15 +4,12 @@ const resetButton = document.querySelector(".reset");
 const number = document.querySelector(".number");
 const createButton = document.querySelector(".create");
 const blackButton = document.querySelector("#black");
-let colorButtons = document.querySelectorAll(".color")
+let colorButtons = document.querySelectorAll(".color");
 let squareColor = "black";
 let squares;
 let squareDim;
 
 blackButton.disabled = true;
-blackButton.classList.add("active");
-let activeButton;
-blackButton.classList
 
 resetButton.disabled = true;
 
@@ -38,23 +35,31 @@ function createGrid (n) {
 
 function reset() {
     squares = document.querySelectorAll(".square");
-    squares.forEach(function(square) {square.style.backgroundColor = ""; square.style.borderColor = ""; square.remove();});
+    squares.forEach(function(square) {
+        square.style.backgroundColor = "";
+        square.style.borderColor = "";
+        square.remove();});
     resetButton.disabled = true;
 }
 
-function chooseBrush(button) {
-
-activeButton = document.querySelector(".active")
-    activeButton.disabled = false;
-activeButton.classList.remove(".active");
-    activeButton.classList.add(".inactive");
-    button.classList.remove(".inactive");
-    button.classList.add(".active");
+function chooseBrush(event) {
+    let button = event.target;
+    let activeButton = document.querySelector(".color.active");
+    if (activeButton) {
+        activeButton.disabled = false;
+        activeButton.classList.remove("active");
+        activeButton.classList.add("inactive");
+    }
+    button.classList.remove("inactive");
+    button.classList.add("active");
     button.disabled = true;
-
+    squareColor = button.id;  // Update the square color based on the button id
 }
 
-colorButtons.forEach(b => b.addEventListener("click", chooseBrush(b)));
+colorButtons.forEach(b => {
+    b.addEventListener("click", chooseBrush(b));
+    console.log(`Adding listener to: ${b.id}`); // Log which button is getting the listener
+});
 
 createButton.addEventListener("click", function() {createGrid(number.value);})
 

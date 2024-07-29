@@ -9,3 +9,55 @@ CREATE EVENT LISTENER (hover)
     CHANGE BGCOLOR OF HOVERED-ON DIVS
 
 CREATE RESET BUTTON
+
+
+
+1. HTML Setup
+   - Create a container for the etch-a-sketch
+   - Add buttons for:
+     - Black color (default active)
+     - Blue color
+     - Random color
+     - Darken color
+   - Add controls for:
+     - Input field to specify grid size
+     - Create grid button
+     - Reset grid button
+
+2. CSS Setup
+   - Style the container, buttons, and grid squares
+
+3. JavaScript Logic
+   - Initial Setup
+     - Select DOM elements: container, buttons, input field, etc.
+     - Set default color to black
+     - Disable the black color button (default active)
+   
+   - Event Listeners
+     - Add click event listeners to color buttons
+       - Call chooseColor(event) on click
+     - Add click event listener to create button
+       - Call createGrid(n) on click
+     - Add click event listener to reset button
+       - Call resetGrid() on click
+
+   - Functions
+     - createGrid(n)
+       - Clear existing grid content
+       - Calculate square size based on container size and `n`
+       - Loop `n * n` times:
+         - Create a square div
+         - Set the square size
+         - Add hover event listener to change color on hover
+         - Append square to container
+       - Disable the create button
+
+     - resetGrid()
+       - Clear all squares from the container
+       - Re-enable the create button
+
+     - chooseColor(event)
+       - Get the clicked button
+       - Update the active color based on button's id
+       - Disable the clicked button
+       - Enable all other color buttons
