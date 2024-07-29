@@ -1,24 +1,113 @@
-.lower {
+body {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    font-family: fin serif display;
+    justify-content: center;
     align-items: center;
+    margin: 2% 5%;
+
+    /* background-image: url(./tile.png); */
+}
+
+h1 {
+    margin: 10px;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    border-style: solid;
+    border-width: 1.5px 1.5px 0;
+    border-radius: 7px 7px 0 0;
+    border-color: rgb(125, 107, 68);
+    flex-basis: 100%;
+    width: 587.66px;
+    padding: 17px;
+    color: white;
+    background-color: rgb(207, 177, 114);
+
+}
+
+.createReset {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+
+button {
+    padding: 4px 10px;
+}
+
+.colors {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.lower {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    /* align-self: center; */
+    border-style: solid;
+    border-width: 0 1.5px 1.5px 1.5px;
+    border-radius: 0 0 7px 7px;
+    border-color: rgb(125, 107, 68);
+    width: 621.66px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
 
 }
 
 .controls {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 15px;
     align-items: center;
+}
 
+input {
+    font-family: fin serif display;
+}
+
+#random {
+    background: linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet, red);
+    color: white;
+    font-weight: 800;
+    font-family: fin serif display;
+}
+
+#black {
+    background: rgb(71, 71, 71);
+    color: white;
+    font-weight: 800;
+    font-family: fin serif display;
+}
+
+.create {
+    font-family: fin serif display;
+}
+
+.reset {
+    
+    font-family: fin serif display;
+}
+
+.number {
+    width: 40px;
 }
 
 .frame {
-    padding: 10px;
+    padding: 20px;
     margin: 10px;
     border-style: solid;
-    background-color: aqua;
+    border-width: 3px;
+    border-color: rgb(125, 107, 68);
+    background-color: rgb(207, 177, 114);
+    border-radius: 5%;
 }
 
 .container {
@@ -36,4 +125,24 @@
 
 .square {
     border-style: none;
+    opacity: 1;
+}
+
+#random:disabled, #black:disabled {
+    background-color: grey;
+    color: rgb(205, 205, 205);
+}
+
+.footer {
+    padding-top: 25px;
+    font-size: 12px;
+}
+
+a {
+    color: rgb(164, 135, 73);
+    text-decoration: none;
+}
+
+.odin {
+    color: rgb(119, 92, 29);
 }

@@ -4,7 +4,8 @@ const resetButton = document.querySelector(".reset");
 const number = document.querySelector(".number");
 const createButton = document.querySelector(".create");
 const blackButton = document.querySelector("#black");
-const randomButton = document.querySelector("#random")
+const randomButton = document.querySelector("#random");
+const darkenButton = document.querySelector("#darken");
 let colorButtons = document.querySelectorAll(".color");
 let squareColor = "black";
 let squares;
@@ -28,7 +29,13 @@ function createGrid (n) {
         }
         squareDim = (container.style.offsetWidth / n) + "px";
         squares = document.querySelectorAll(".square");
-        squares.forEach(square => square.addEventListener("mouseover", () => {square.style.backgroundColor = squareColor;}))
+        squares.forEach(square => square.addEventListener("mouseover", () => {square.style.backgroundColor = squareColor;
+            if (squareColor == "random") {squareColor=randomColor()}
+            if (darkenButton.classList.contains("selected")) {
+                let opacity = square.style.opacity;
+                opacity -= 0.05;
+            };
+        }))
         createButton.disabled = true;
         resetButton.disabled = false;
         }
@@ -112,8 +119,8 @@ function blackColor(event) {
 
 // colorButtons.forEach(button => button.addEventListener("click", () => randomColor(event)));
 
-blackButton.addEventListener("click", () => blackColor(event));
-randomButton.addEventListener("click", () => randomColor(event))
+blackButton.addEventListener("click", (event) => blackColor(event));
+randomButton.addEventListener("click", (event) => randomColor(event))
 
 
 createButton.addEventListener("click", function() {createGrid(number.value);})

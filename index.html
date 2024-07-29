@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Etch-a-Sketch!</title>
-    <script src="./script2.js" defer></script>
+    <script src="./script.js" defer></script>
     <link rel="stylesheet" type="text/css" href="./style.css">
 </head>
 <body>
     
     <div class="header">
         <h1>Etch-a-Sketch</h1>
-        <p class="subtitle">Following the Odin's Project assignment n. X</p>
+        <p class="subtitle">Following the Odin's Project assignment <a class="odin" href="https://www.theodinproject.com/lessons/foundations-etch-a-sketch#project-solution">"Etch-a-Sketch" <img src="./newwindow.svg" height="13" width="13"></a></p>
     </div>
 
 <div class="lower">
@@ -20,11 +20,15 @@
         <div class="colors">
             <button class="color selected" id="black">Black</button>
             <button class="color unselected" id="random">Random</button>
-            <button class="color unselected" id="darken">Darken</button>
+            <!-- <button class="color unselected" id="darken">Darken</button> -->
         </div>
 
         <div class="createReset">
-        <input type="number" class="number"> <button class="create">Create</button>
+        <div class="size">
+            <span>Size: </span>
+            <input type="number" class="number">
+        </div>
+        <button class="create">Create</button>
         <button class="reset">Reset</button><br>
     </div>
     </div>
@@ -35,6 +39,8 @@
 </div>
 
 </div>
+
+<div class="footer">2024, definitely not &copy; by <a href="niccostantini.github.com">the_niccolo</a></div>
     
 </body>
 </html>
